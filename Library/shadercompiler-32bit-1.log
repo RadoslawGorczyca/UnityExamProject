@@ -1,5 +1,9 @@
 Base path: G:/Programowanie/Unity 5/Editor/Data
+<<<<<<< HEAD
 Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-2712
+=======
+Pipe name: \\.\pipe\UnityShaderCompiler-32bit-1-8480
+>>>>>>> master
 Cmd: getPlatforms
 Unhandled exception: Readfile from pipe failed. GLE=Potok został zakończony.
 
