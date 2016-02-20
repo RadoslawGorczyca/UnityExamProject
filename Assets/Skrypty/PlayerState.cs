@@ -22,8 +22,11 @@ public class PlayerState : MonoBehaviour
         GlobalObject.Instance.Player = gameObject;
         GlobalObject.Instance.fpsTransform = gameObject.transform;
         localPlayerData = GlobalObject.Instance.savedPlayerData;
-        if(localPlayerData.PositionY != 0)
+
+        if (GlobalObject.Instance.IsBeingLoaded == true)
         playerPosition.position = new Vector3(localPlayerData.PositionX, localPlayerData.PositionY, localPlayerData.PositionZ);
+
+        GlobalObject.Instance.IsBeingLoaded = false;
     }
 
     //At start, load data from GlobalControl.
