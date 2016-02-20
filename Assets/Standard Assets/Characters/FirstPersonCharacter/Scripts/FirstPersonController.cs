@@ -8,6 +8,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
+
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
@@ -42,6 +43,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public Transform pauseMenu;
+        public bool pauseGame = false;
+
+        public void Pausing()
+        {
+            pauseGame = !pauseGame;
+            if (pauseGame == true)
+            {
+                pauseMenu.gameObject.SetActive(true);
+                m_MouseLook.XSensitivity = 0;
+                m_MouseLook.YSensitivity = 0;
+            }
+            else
+            {
+                pauseMenu.gameObject.SetActive(false);
+                m_MouseLook.XSensitivity = 2;
+                m_MouseLook.YSensitivity = 2;
+            }
+        }
+
         // Use this for initialization
         private void Start()
         {
@@ -56,8 +77,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
-
-
         // Update is called once per frame
         private void Update()
         {
@@ -81,6 +100,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                Pausing();
+            }
         }
 
 
