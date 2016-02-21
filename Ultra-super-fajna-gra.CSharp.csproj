@@ -51,17 +51,17 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -80,6 +80,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Campfire\Script\FireLightScript.cs" />
     <Compile Include="Assets\PlayerStatistics.cs" />
     <Compile Include="Assets\Rocks Pack\Standard Assets\Image Effects (Pro Only)\BlurEffect.cs" />
     <Compile Include="Assets\Rocks Pack\Standard Assets\Image Effects (Pro Only)\ColorCorrectionEffect.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\LightIntensity.cs" />
     <Compile Include="Assets\Scripts\LookAtCube.cs" />
     <Compile Include="Assets\Scripts\MouseClick.cs" />
+    <Compile Include="Assets\Scripts\Totem.cs" />
     <Compile Include="Assets\Skrypty\FirstPersonController.cs" />
     <Compile Include="Assets\Skrypty\GlobalObject.cs" />
     <Compile Include="Assets\Skrypty\Interact.cs" />
@@ -111,10 +113,12 @@
     <Compile Include="Assets\Skrypty\PauseMenuScript.cs" />
     <Compile Include="Assets\Skrypty\PlayerState.cs" />
     <Compile Include="Assets\Skrypty\PortalCol.cs" />
+    <Compile Include="Assets\Skrypty\PortalCol2.cs" />
     <Compile Include="Assets\Skrypty\WallCol.cs" />
     <Compile Include="Assets\Skrypty\pupup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Campfire\License.txt" />
     <None Include="Assets\Forest Grounds - Terrain Texture Pack\Readme.txt" />
     <None Include="Assets\Modern Building\Modern_ConcreteBuildingExt_01\Modern_ConcreteBuildingExt_01.xml" />
     <None Include="Assets\Modern Building\Modern_ConcreteBuildingExt_01\readme.txt" />
@@ -176,6 +180,7 @@
     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

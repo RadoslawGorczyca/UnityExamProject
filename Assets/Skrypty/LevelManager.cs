@@ -14,10 +14,16 @@ public class LevelManager : MonoBehaviour {
 
     public PlayerStatistics savedPlayerData = new PlayerStatistics();
 
+    public GameObject art1, art2, art3;
 
     void Start()
     {
         global = GameObject.FindObjectOfType<GlobalObject>();
+        global.arf1 = art1;
+        global.arf2 = art2;
+        global.arf3 = art3;
+
+        global.artefakty();
     }
 
 

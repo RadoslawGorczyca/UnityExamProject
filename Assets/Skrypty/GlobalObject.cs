@@ -16,6 +16,7 @@ public class GlobalObject : MonoBehaviour {
 
     public PlayerStatistics savedPlayerData = new PlayerStatistics();
 
+    public GameObject arf1, arf2, arf3;
 
     void Awake()
     {
@@ -31,6 +32,8 @@ public class GlobalObject : MonoBehaviour {
         fps = GameObject.FindObjectOfType<FirstPersonController>();
         fpsTransform = GameObject.Find("FPSController").transform;
 
+
+       
     }
     // Use this for initialization
     void Start () {
@@ -38,9 +41,9 @@ public class GlobalObject : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	void Update ()
+    {
+    }
 
     public void Save()
     {
@@ -88,4 +91,20 @@ public class GlobalObject : MonoBehaviour {
 
         IsBeingLoaded = true;
     }
+
+    public void artefakty()
+    {
+        if (LocalCopyOfData.Art1)
+        {
+            arf1.SetActive(LocalCopyOfData.Art1);
+            arf3.GetComponent<Light>().enabled = false;
+        }
+
+        if (LocalCopyOfData.Art2)
+        {
+            arf2.SetActive(LocalCopyOfData.Art2);
+        }
+
+    }
+
 }
