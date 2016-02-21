@@ -16,7 +16,7 @@ public class GlobalObject : MonoBehaviour {
 
     public PlayerStatistics savedPlayerData = new PlayerStatistics();
 
-    public GameObject arf1, arf2, arf3;
+    public Totem arf1, arf2, arf3;
 
     void Awake()
     {
@@ -96,13 +96,14 @@ public class GlobalObject : MonoBehaviour {
     {
         if (LocalCopyOfData.Art1)
         {
-            arf1.SetActive(LocalCopyOfData.Art1);
-            arf3.GetComponent<Light>().enabled = false;
+            arf1.parent.SetActive(LocalCopyOfData.Art1);
+            arf3.prawda = true;
         }
 
         if (LocalCopyOfData.Art2)
         {
-            arf2.SetActive(LocalCopyOfData.Art2);
+            arf2.parent.SetActive(LocalCopyOfData.Art2);
+            arf1.prawda = true;
         }
 
     }

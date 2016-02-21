@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour {
 
     public PlayerStatistics savedPlayerData = new PlayerStatistics();
 
-    public GameObject art1, art2, art3;
+    public Totem art1, art2, art3;
 
     void Start()
     {
