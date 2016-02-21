@@ -12,35 +12,11 @@ public class LevelManager : MonoBehaviour {
     public Transform mainMenu, optionsMenu, pauseMenu;
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController fps;
 
-    //public PlayerStatistics LocalCopyOfData;
-    //public bool IsSceneBeingLoaded = false;
-
-    //public GameObject Player;
-
     public PlayerStatistics savedPlayerData = new PlayerStatistics();
 
-    void Awake()
-    {
-        /*
-        if (Instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        //if(savedPlayerData.PositionY != 0)
-            //Player.transform.position = new Vector3(356.9629f, 357.331f, 245.9843f);
-        fps = GameObject.FindObjectOfType<FirstPersonController>();
-        fpsTransform = GameObject.Find("FPSController").transform;
-        */
-    }
 
     void Start()
     {
-        //Player.transform.position = new Vector3(356.9629f, 357.331f, 245.9843f);
         global = GameObject.FindObjectOfType<GlobalObject>();
     }
 
@@ -81,5 +57,13 @@ public class LevelManager : MonoBehaviour {
     public void Load()
     {
         global.Load();
+
+        if (global.savedPlayerData.SceneID == 1)
+            LoadScene("Las");
+        if (global.savedPlayerData.SceneID == 2)
+            LoadScene("Level1");
+        if (global.savedPlayerData.SceneID == 3)
+            LoadScene("Level2");
     }
+
 }

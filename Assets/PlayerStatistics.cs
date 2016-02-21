@@ -8,5 +8,6 @@ using System.Text;
     {
         public int SceneID;
         public float PositionX, PositionY, PositionZ;
+        public bool Art1, Art2;
     }
 

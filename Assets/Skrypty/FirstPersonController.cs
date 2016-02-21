@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -45,6 +46,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public Transform pauseMenu;
         public bool pauseGame = false;
+        public RaycastHit hit;
 
         // Use this for initialization
         private void Start()
@@ -104,6 +106,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 Pausing();
+            }
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+
+            if(Physics.Raycast(ray, out hit, 1))
+            {
+                if (hit.collider.gameObject.GetComponent<Interact>() != null)
+                    hit.collider.gameObject.GetComponent<Interact>().OnLookEnter();
             }
         }
 
