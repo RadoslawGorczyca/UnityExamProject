@@ -18,12 +18,12 @@ public class Interact : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         selected = false;
-	
+        Target.GetComponent<pupup>().BrakNapis();
 	}
 
     public void OnLookEnter()
     {
-        Target.text = "Press E";
+        Target.GetComponent<pupup>().Napis();
         selected = true;
 
         if (Input.GetKeyDown(KeyCode.E) && selected)

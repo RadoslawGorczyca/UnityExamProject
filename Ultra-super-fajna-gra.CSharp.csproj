@@ -109,6 +109,7 @@
     <Compile Include="Assets\Skrypty\PortalCol.cs" />
     <Compile Include="Assets\Skrypty\PortalCol2.cs" />
     <Compile Include="Assets\Skrypty\WallCol.cs" />
+    <Compile Include="Assets\Skrypty\Zniknij.cs" />
     <Compile Include="Assets\Skrypty\pupup.cs" />
   </ItemGroup>
   <ItemGroup>

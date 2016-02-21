@@ -8,7 +8,6 @@ public class PlayerState : MonoBehaviour
 
     public Transform playerPosition;
 
-    //TUTORIAL
     public PlayerStatistics localPlayerData = new PlayerStatistics();
 
     void Awake()
